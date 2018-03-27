@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptSettings">
-    <option name="languageLevel" value="ES6" />
+    <option name="languageLevel" value="JS_1_5" />
   </component>
   <component name="RustProjectSettings">
     <option name="explicitPathToStdlib" value="C:\Users\kroltan\.rustup\toolchains\nightly-x86_64-pc-windows-gnu\lib\rustlib\src\rust\src" />

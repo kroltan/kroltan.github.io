@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="styles.css">
     <script type="application/javascript">
         window.siteConfig = {
-            unscrambleEmailsOnLoad: true,
             handySelect: true
         };
     </script>
@@ -15,14 +14,18 @@
 <body>
     <header>
         <h1>Leonardo Giovanni Scur</h1>
+
         <nav>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
+            <a href="#work">Work</a>
         </nav>
     </header>
+
     <main>
         <section id="about">
             <h2>About</h2>
+            <img src="me.jpg" width="128" height="128" alt="Image of my face" class="minimal-center"/>
             <p>
                 Hi! I'm Leonardo, a web developer who also makes games in his spare time.
                 Maybe someday I'll make them full-time!
@@ -46,9 +49,7 @@
                     <tbody data-handy-select="td:last-child">
                         <tr>
                             <td>E-mail</td>
-                            <td data-email-unscramble title="Please type the at-symbol and dot-symbol manually">
-                                kroltan1<span class="meta-at"></span>gmail<span class="meta-dot"></span>com
-                            </td>
+                            <td>kroltan1@gmail.com</td>
                         </tr>
                         <tr>
                             <td>Discord</td>
@@ -69,11 +70,8 @@
                     </tbody>
                 </table>
             </div>
-            <p>
-                If you're wondering why this website is so barren and textual, well, to be honest, me too! At least it
-                loads blazingly fast on mobile and is completely responsive. Without a single <code>@media</code> query!
-            </p>
         </section>
+
         <section id="projects">
             <h2>Projects</h2>
             <article>
@@ -91,7 +89,20 @@
                     Lots of reverse-engineering work went into it, resulting in a (honestly very messy) PHP codebase.
                     In my defense, I was 15!
                 </p>
-                <p>We also built a supporting launcher/updater, as well as a simple homepage.</p>
+                <p>
+                    We also implemented a surrounding ecosystem for users:
+                </p>
+                <ul>
+                    <li>Game launcher that automatically updates the game, in C# and GTK#</li>
+                    <li>
+                        Landing page to inform new users, which eventually was bestowed the official domain name by the
+                        game's erstwhile developers.
+                    </li>
+                    <li>
+                        Currently in progress, an online level search application that allows the users to search for
+                        content without booting the game, made in React.
+                    </li>
+                </ul>
                 <p>
                     I acted as a developer and project manager for the server project, as well as helping conceptualize
                     and develop other tools related to the game. The team size varied over time, but was at its most
@@ -102,7 +113,7 @@
                 <header>
                     <h3>JouleThief: Charge Your Phone</h3>
                     <nav>
-                        <a href="https://ldjam.com/events/ludum-dare/39/joulethief-charge-your-phone">Ludum Dare entry</a>
+                        <a href="https://ldjam.com/events/ludum-dare/39/joulethief-charge-your-phone">Jam entry</a>
                         <a href="https://kroltan.itch.io/joule-thief">itch.io page</a>
                     </nav>
                 </header>
@@ -121,7 +132,70 @@
                 </p>
             </article>
         </section>
+
+        <section id="work">
+            <h2>Work Experience</h2>
+            <article>
+                <header>
+                    <h3>Lagoasoft</h3>
+                    Developer, 2016 ~ current
+                </header>
+                <p>
+                    Developer on AngularJS enterprise projects, and later, lead React developer on web application
+                    projects.
+                </p>
+            </article>
+            <article>
+                <header>
+                    <h3>Chaordic</h3>
+                    Intern, 2013 ~ 2015
+                </header>
+                <p>
+                    Worked in various fields, mostly front-end Angular and back-end Python development, as well as some
+                    experience maintaining a Docker-based infrastructure, within a Scrum project.
+                </p>
+            </article>
+        </section>
+
+        <section id="meta">
+            <h2>Meta</h2>
+            <p>
+                If you're wondering why this website is so barren and textual, it is an ode to the olden "web 1.0" era.
+                Nowadays, every website seems to be a web application, sporting incredibly efficient libraries and
+                modern methodologies, and taking full advantage of how cheap and common high-speed internet has become.
+            </p>
+            <p>
+                As someone who spent a good part of his childhood on dial-up when everyone had broadband, I wanted
+                to give a nod to that era. And also, it makes much more sense for a big ol' data dump site like this one
+                to be just that, no bells nor whistles.
+            </p>
+            <p>
+                I wanted to make something simple and retro, that looked reasonably good. Slim, not sleek. Thus
+                the choice of a simple color scheme, prosaic content, and brutalist design. This site is completely
+                usable without CSS and/or JS! <span aria-hidden="true">Except for the following button:</span>
+            </p>
+            <div class="minimal-center" aria-hidden="true">
+                <button onclick="site.removeAllStyles(this)" title="Irreversible action! Refresh to go back to normal.">
+                    Remove all styles
+                </button>
+            </div>
+            <blockquote>
+                Look decent and accessible, but allow graceful fallback all the way to 1999.
+            </blockquote>
+            <p>
+                That was the design goal.
+                This does not mean I'm using old or deprecated technology, however. This site uses modern ES6
+                JavaScript, but only for convenience, no content is controlled by it. It also uses the CSS Flex display
+                module, which is at this point extremely well supported, yet still a "new" technology.
+            </p>
+            <p>
+                It does mean, however, that this site is doubly anarchronistic: Stylistically nostalgic, yet
+                functionally contemporaneous. That is, from a technical point of view. From a user's point of view, it's
+                exactly the opposite.
+            </p>
+        </section>
     </main>
+
     <footer id="footer">
         &copy; Leonardo Giovanni Scur, 2017
     </footer>

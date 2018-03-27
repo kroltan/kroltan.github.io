@@ -1,65 +1,20 @@
 /*
- * Using ES6 because if you don't use a decent and recent browser,
- * you don't deserve the usability improvements this script offers.
- *
- * Also these scripts aren't really a big deal.
+ * No ES6 to maximize compatibility
  * */
 
-const siteConfig = window.siteConfig;
+window.site = {
+    removeAllStyles: function(source) {
+        source.removeAttribute("title");
+        console.log("Removed the tooltip from the source:", source);
 
-const unscrambleEmails = within => {
-    const elementToTextReplacer = text => element => element.outerHTML = text;
+        var stylesheets = document.querySelectorAll("style, link[rel=stylesheet]");
 
-    for (let element of within.querySelectorAll("[data-email-unscramble]")) {
-        element.querySelectorAll(".meta-at").forEach(elementToTextReplacer("@"));
-        element.querySelectorAll(".meta-dot").forEach(elementToTextReplacer("."));
-        element.removeAttribute("title");
-        element.removeAttribute("data-email-unscramble");
-        element.innerText = element.innerText.trim();
-    }
-};
-
-/**
- * Automatically selects all text of any element with the attribute `data-handy-select`,
- * where the attribute value is a selector defining which descendants are autoselectable.
- * Upon moving the mouse outside these elements, the seleciton is reset.
- * If there is an ongoing selection somewhere not tagged `data-handy-select`, then nothing happens.
- * */
-const registerHandySelect = within => {
-    for (let root of within.querySelectorAll("[data-handy-select]")) {
-        for (let element of root.querySelectorAll(root.getAttribute("data-handy-select"))) {
-            const selectElement = () => {
-                if (!siteConfig.handySelect) {
-                    return;
-                }
-
-                const selection = document.getSelection();
-
-                if (!root.contains(selection.anchorNode) && selection.type === "Range") {
-                    return;
-                }
-                if (element === selection.anchorNode) {
-                    return;
-                }
-
-                selection.removeAllRanges();
-                selection.selectAllChildren(element);
-            };
-            element.addEventListener("mouseover", selectElement, {passive: true});
-            element.addEventListener("selectstart", selectElement, {passive: true});
-            element.addEventListener("mouseout", () => {
-                const selection = document.getSelection();
-                if (root.contains(selection.anchorNode)) {
-                    selection.removeAllRanges();
-                }
-            }, {passive: true});
+        console.log("Starting removal of " + stylesheets.length + " stylesheets:");
+        for (var i = stylesheets.length - 1; i >= 0; --i) {
+            var element = stylesheets[i];
+            console.log("Removing", element);
+            element.remove();
         }
+        console.log("Successfully removed all stylesheets from page.");
     }
 };
-
-window.addEventListener("load", () => {
-    if (siteConfig.unscrambleEmailsOnLoad) {
-        unscrambleEmails(document);
-    }
-    registerHandySelect(document);
-});

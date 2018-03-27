@@ -13,6 +13,7 @@ body {
     flex-basis: 40rem;
 }
 
+
 a {
     color: inherit;
     text-decoration-color: inherit;
@@ -40,8 +41,19 @@ a:visited {
 }
 
 p {
-    width: calc(100% - 4em);
-    margin: 0 auto;
+    margin: 0 2em;
+}
+
+ul {
+    margin: 0 2em;
+    padding-left: 1em;
+}
+
+blockquote {
+    font-style: italic;
+}
+blockquote::before, blockquote::after {
+    content: '"';
 }
 
 h1::before, h2::before {
@@ -50,6 +62,7 @@ h1::before, h2::before {
     margin-left: -1em;
     opacity: 0.5;
 }
+
 
 header {
     display: flex;
@@ -63,8 +76,10 @@ nav > :not(:last-child) {
 }
 
 footer {
-    padding-top: 8em;
+    padding: 4em 0 1em 0;
+    text-align: center;
 }
+
 
 section {
     display: flex;
@@ -75,11 +90,13 @@ section > *, article > * {
     margin-bottom: 1em;
 }
 
+
 article h3 {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     margin-right: 2em;
 }
+
 
 table thead {
     font-weight: bold;
@@ -89,26 +106,13 @@ table td:not(:last-of-type) {
     padding-right: 1em;
 }
 
+
 .minimal-center {
     align-self: center;
 }
 
+
 [title] {
     cursor: help;
     text-decoration: underline dotted;
-}
-
-
-/* E-mail scrambling */
-
-.meta-dot, .meta-at {
-    opacity: 0.5;
-}
-
-.meta-at::before {
-    content: "@";
-}
-
-.meta-dot::before {
-    content: ".";
 }
