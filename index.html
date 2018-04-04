@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Leonardo Giovanni Scur</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="print.css" media="print">
     <script type="application/javascript">
         window.siteConfig = {
             handySelect: true
@@ -15,17 +16,23 @@
     <header>
         <h1>Leonardo Giovanni Scur</h1>
 
-        <nav>
+        <nav role="navigation">
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#work">Work</a>
         </nav>
     </header>
 
-    <main>
+    <main role="main">
         <section id="about">
             <h2>About</h2>
-            <img src="me.jpg" width="128" height="128" alt="Image of my face" class="minimal-center"/>
+            <img
+                class="minimal-center"
+                src="me.jpg"
+                width="128" height="128"
+                alt="Image of my face"
+                role="presentation"
+            />
             <p>
                 Hi! I'm Leonardo, a web developer who also makes games in his spare time.
                 Maybe someday I'll make them full-time!
@@ -77,7 +84,7 @@
             <article>
                 <header>
                     <h3>Troposphir</h3>
-                    <nav>
+                    <nav role="navigation">
                         <a href="https://github.com/Troposphir">Project page</a>
                         <a href="http://atmosphir.com">Game website</a>
                         <a href="https://discord.gg/0gV47WLdC84hyJNk">Community Discord</a>
@@ -112,7 +119,7 @@
             <article>
                 <header>
                     <h3>JouleThief: Charge Your Phone</h3>
-                    <nav>
+                    <nav role="navigation">
                         <a href="https://ldjam.com/events/ludum-dare/39/joulethief-charge-your-phone">Jam entry</a>
                         <a href="https://kroltan.itch.io/joule-thief">itch.io page</a>
                     </nav>
@@ -196,7 +203,7 @@
         </section>
     </main>
 
-    <footer id="footer">
+    <footer id="footer" role="contentinfo">
         &copy; Leonardo Giovanni Scur, 2017
     </footer>
 </body>

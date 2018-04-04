@@ -40,7 +40,7 @@ a:visited {
     opacity: 0.9;
 }
 
-p {
+p, blockquote {
     margin: 0 2em;
 }
 

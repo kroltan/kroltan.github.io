@@ -1,0 +1,15 @@
+html {
+    display: block;
+}
+
+body {
+    max-width: unset;
+}
+
+section {
+    page-break-after: always;
+}
+
+nav, footer, [aria-hidden=true] {
+    display: none;
+}
